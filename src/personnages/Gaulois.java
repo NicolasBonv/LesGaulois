@@ -27,6 +27,8 @@ public class Gaulois{
 		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
 	}
 	public static void main(String[] args) {
+		Gaulois asterix = new Gaulois("Asterix",8);
+		System.out.println(asterix);
 		//TODO créer un main permettant de tester la classe Gaulois
 	}
 }
