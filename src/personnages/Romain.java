@@ -7,7 +7,7 @@ public class Romain{
 		this.nom = nom;
 		this.force = force;
 	}
-	public String getNom() {
+	public static String getNom() {
 		return nom;
 	}
 	public static void parler(String texte) {

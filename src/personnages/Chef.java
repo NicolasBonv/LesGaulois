@@ -1,4 +1,9 @@
 package personnages;
+import personnages.Romain;
+import personnages.Gaulois;
+import personnages.Druide;
+import personnages.Chef;
+import personnages.Village;
 
 public class Chef {
 	private String nom;
@@ -21,7 +26,7 @@ public class Chef {
 		return "Le chef" + nom + "du village" + village.getNom() + ":";
 	}
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoier un grand coup dans la machoire de " + romain.getNom());
-		romain.recevoirCoup(force / 3);
+		System.out.println(nom + " envoier un grand coup dans la machoire de " + Romain.getNom());
+		Romain.recevoirCoup(force / 3);
 	}
-
+}
