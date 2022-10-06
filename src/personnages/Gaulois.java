@@ -1,7 +1,7 @@
 package personnages;
 
 public class Gaulois{
-	 private String nom;
+	 private static String nom;
 	 private int force;
 	 private int effetPotion = 1;
 	 public Gaulois(String nom, int force) {
@@ -12,10 +12,10 @@ public class Gaulois{
 	public String getNom() {
 		return nom;
 	}
-	public void parler(String texte) {
-		System.out.println(prendreParole() + "<" + texte + ">");
+	public static void parler(String texte) {
+		System.out.println(prendreParole() + "< " + texte + " >");
 	}
-	private String prendreParole() {
+	private static String prendreParole() {
 		return "Le gaulois " + nom + " : ";
 	}
 	public void frapper(Romain romain) {
@@ -25,11 +25,15 @@ public class Gaulois{
 	@Override
 	public String toString() {
 		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
+
 	}
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Asterix",8);
 		System.out.println(asterix);
-		//TODO créer un main permettant de tester la classe Gaulois
+		System.out.println(prendreParole()); 
+		parler("coucou je suis un romain");
+		frapper(Romain.minus);
+		//TODO crï¿½er un main permettant de tester la classe Gaulois
 	}
 }
 

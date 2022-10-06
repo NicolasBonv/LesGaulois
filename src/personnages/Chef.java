@@ -24,4 +24,4 @@ public class Chef {
 		System.out.println(nom + " envoier un grand coup dans la machoire de " + romain.getNom());
 		romain.recevoirCoup(force / 3);
 	}
-}
+

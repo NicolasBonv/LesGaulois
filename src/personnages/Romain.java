@@ -1,8 +1,8 @@
 package personnages;
 
 public class Romain{
-	private String nom;
-	private int force;
+	private static String nom;
+	private static int force;
 	public Romain(String nom,int force) {
 		this.nom = nom;
 		this.force = force;
@@ -10,13 +10,13 @@ public class Romain{
 	public String getNom() {
 		return nom;
 	}
-	public void parler(String texte) {
+	public static void parler(String texte) {
 		System.out.println(prendreParole() + "<" + texte + ">");
 	}
-	private String prendreParole() {
+	private static String prendreParole() {
 		return "Le romain " + nom + " : ";
 	}
-	public void recevoirCoup(int forceCoup){
+	public static void recevoirCoup(int forceCoup){
 		force -= forceCoup;
 		if (force>0) {
 			parler("Aie");
@@ -25,4 +25,15 @@ public class Romain{
 			parler("J'abandonne...");
 		}
 	}
+	public String toString() {
+		return "Romain [nom=" + nom + ", force=" + force + "]";
+	}
+	public static void main(String[] args) {
+		Romain minus = new Romain("Minus",6);
+		System.out.println(minus);
+		System.out.println(prendreParole()); 
+		parler("coucou je suis un romain");
+		recevoirCoup(5);
+		//TODO cr�er un main permettant de tester la classe Romain
+}
 }
