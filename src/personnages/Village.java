@@ -7,12 +7,13 @@ import personnages.Chef;
 public class Village {
 	private String nom;
 	private Chef chef;
-	private static int nbVillageois = 0;
-	private int nbVillageoisMaximum;
-	private static Gaulois villageois[];
-	public Village(String nom) {
+	private int nbVillageois = 0;
+	private int nbVillageoisMaximum=30;
+	private Gaulois villageois[];
+	
+	public Village(String nom,int nbVillageoisMaximum) {
 		this.nom = nom;
-		this.nbVillageoisMaximum = nbVillageoisMaximum;
+		villageois = new Gaulois[nbVillageoisMaximum];
 	}
 	public void SetChef(Chef chef) {
 		this.chef = chef;
@@ -20,12 +21,20 @@ public class Village {
 	public String getNom() {
 		return nom;
 	}
-	public static void ajouterHabitant(Gaulois nom) {
+	public void ajouterHabitant(Gaulois gaulois) {
 		nbVillageois += 1;
-		villageois[nbVillageois] = new Gaulois(Gaulois.nom,Gaulois.force);
+		villageois[nbVillageois] = gaulois;
 	}
-	public static Gaulois trouverHabitant(int nbVillageois) {
+	public Gaulois trouverHabitant(int nbVillageois) {
 		return villageois[nbVillageois];
 	}
-	
+	public static void main(String[] args) {
+		Village village = new Village("Village des Irréductibles",30);
+		Gaulois asterix = new Gaulois("Asterix",8);
+		village.ajouterHabitant(asterix);
+		//Gaulois gaulois = Village.trouverHabitant(30);
+		
+		
+		
+	}
 }
