@@ -5,7 +5,7 @@ public class Gaulois{
 	 public static String nom;
 	 public static int force;
 	 private static int effetPotion=1;
-	 public Gaulois(String nom, int force) {
+	 public Gaulois(String nom, int i) {
 		 this.nom = nom;
 		 this.force = force;
 		 
