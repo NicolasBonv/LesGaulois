@@ -31,10 +31,10 @@ public class Village {
 	public static void main(String[] args) {
 		Village village = new Village("Village des Irréductibles",30);
 		Gaulois asterix = new Gaulois("Asterix",8);
+		Chef abraracourcix = new Chef("Abracourcix",6,0,village);
 		village.ajouterHabitant(asterix);
-		//Gaulois gaulois = Village.trouverHabitant(30);
-		
-		
-		
+		Gaulois gaulois = village.trouverHabitant(1);
+		System.out.println(gaulois);
+		//On obtient Asterix avec sa force et son effetPotion
 	}
 }
