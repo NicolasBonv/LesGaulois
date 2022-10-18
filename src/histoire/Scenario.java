@@ -21,6 +21,7 @@ public class Scenario {
 		Gaulois.frapper(minus);
 		Gaulois.frapper(minus);
 		Gaulois.frapper(minus);
+		Gaulois.frapper(minus);
 	}
 
 }
