@@ -2,12 +2,12 @@ package personnages;
 import personnages.Gaulois;
 import java.util.Random;
 public class Druide {
-	private static String nom;
-	private static int effetPotionMin;
-	private static int effetPotionMax;
-	public static int effetPotionPreparee;
+	private  String nom;
+	private int effetPotionMin;
+	private int effetPotionMax;
+	public int effetPotionPreparee;
 	private int forcePotion = 1;
-	public Druide(String nom,int effetPotionMin,int effetPotionMax) {
+	public Druide(String nom,int effetPotionMin,int effetPotionMax, int effetPotionPreparee) {
 		this.nom = nom;
 		this.effetPotionMin = effetPotionMin;
 		this.effetPotionMax = effetPotionMax;
@@ -17,7 +17,7 @@ public class Druide {
 	public String getNom() {
 		return nom;
 	}
-	public static void preparerPotion() {
+	public void preparerPotion() {
 		Random rand = new Random();
 		effetPotionPreparee = rand.nextInt(effetPotionMax);
 		if (effetPotionPreparee < effetPotionMin) {
@@ -31,17 +31,23 @@ public class Druide {
 			parler("Je n'ai pas trouvée tous les ingrédients, ma potion est seulement de force " + effetPotionPreparee);
 		}
 	}
-	public static void parler(String texte) {
+	public void parler(String texte) {
 		System.out.println(prendreParole() + "<" + texte + ">");
 	}
-	private static String prendreParole() {
+	private String prendreParole() {
 		return "Le druide " + nom + " : ";
 	}
-	public static void booster(Gaulois nom) {
-		Gaulois.parler("Non, " + Gaulois.getNom() + "!... Tu n'auras pas de potion magique");
+	public void booster(Gaulois nom) {
+		parler("Non, " + nom.getNom() + "!... Tu n'auras pas de potion magique");
 	}
-	public static void main(String[] args) {
-		Druide panoramix = new Druide("Panoramix",5,10);
+	/*public static void main(String[] args) {
+		Druide panoramix = new Druide("Panoramix",5,10, effetPotionMax);
 		preparerPotion();
+	}*/
+	public int getForcePotion() {
+		return forcePotion;
+	}
+	public void setForcePotion(int forcePotion) {
+		this.forcePotion = forcePotion;
 	}
 }
