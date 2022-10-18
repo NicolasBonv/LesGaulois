@@ -32,16 +32,16 @@ public class Gaulois{
 		effetPotion = effetPotionPreparee;
 		parler("Merci Druide, je sens ma force est "+ effetPotion + " fois décuplée");
 	}
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Asterix",8);
 		Romain minus = new Romain("Minus",6);
 		Druide panoramix = new Druide("Panoramix",5,10);
-		System.out.println(prendreParole()); 
-		frapper(minus);
-		Druide.preparerPotion();
-		boirePotion(Druide.effetPotionPreparee);
+		System.out.println(asterix.prendreParole()); 
+		asterix.frapper(minus);
+		panoramix.preparerPotion();
+		asterix.boirePotion(panoramix.effetPotionPreparee);
 		//TODO crï¿½er un main permettant de tester la classe Gaulois
-	}*/
+	}
 }
 
 

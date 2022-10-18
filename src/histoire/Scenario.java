@@ -2,7 +2,6 @@ package histoire;
 import personnages.Romain;
 import personnages.Gaulois;
 import personnages.Druide;
-import personnages.Chef;
 public class Scenario {
 
 	public static void main(String[] args) {

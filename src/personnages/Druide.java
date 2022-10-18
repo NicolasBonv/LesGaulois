@@ -6,7 +6,6 @@ public class Druide {
 	private int effetPotionMin;
 	private int effetPotionMax;
 	public int effetPotionPreparee;
-	private int forcePotion = 1;
 	public Druide(String nom,int effetPotionMin,int effetPotionMax) {
 		this.nom = nom;
 		this.effetPotionMin = effetPotionMin;
@@ -39,14 +38,8 @@ public class Druide {
 	public void booster(Gaulois nom) {
 		parler("Non, " + nom.getNom() + "!... Tu n'auras pas de potion magique");
 	}
-	/*public static void main(String[] args) {
-		Druide panoramix = new Druide("Panoramix",5,10, effetPotionMax);
-		preparerPotion();
-	}*/
-	public int getForcePotion() {
-		return forcePotion;
-	}
-	public void setForcePotion(int forcePotion) {
-		this.forcePotion = forcePotion;
+	public static void main(String[] args) {
+		Druide panoramix = new Druide("Panoramix",5,10);
+		panoramix.preparerPotion();
 	}
 }
