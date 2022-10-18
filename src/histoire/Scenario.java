@@ -12,15 +12,15 @@ public class Scenario {
 		Druide panoramix = new Druide("Panoramix",5,10);
 		Gaulois obelix = new Gaulois("Obélix",10);
 		
-		Druide.parler("Je vais aller préparer une petite potion");
-		Druide.preparerPotion();
-		Druide.booster(obelix);
-		Gaulois.parler(" Par Bélénos, ce n'est pas juste !");
-		Gaulois.parler("Bonjour");
-		Romain.parler("UN GAU... UN GAUGAU...");
-		Gaulois.frapper(minus);
-		Gaulois.frapper(minus);
-		Gaulois.frapper(minus);
+		panoramix.parler("Je vais aller préparer une petite potion");
+		panoramix.preparerPotion();
+		panoramix.booster(obelix);
+		obelix.parler(" Par Bélénos, ce n'est pas juste !");
+		asterix.parler("Bonjour");
+		minus.parler("UN GAU... UN GAUGAU...");
+		asterix.frapper(minus);
+		asterix.frapper(minus);
+		asterix.frapper(minus);
 	}
 
 }

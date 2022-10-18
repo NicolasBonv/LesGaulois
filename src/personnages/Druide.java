@@ -7,11 +7,10 @@ public class Druide {
 	private int effetPotionMax;
 	public int effetPotionPreparee;
 	private int forcePotion = 1;
-	public Druide(String nom,int effetPotionMin,int effetPotionMax, int effetPotionPreparee) {
+	public Druide(String nom,int effetPotionMin,int effetPotionMax) {
 		this.nom = nom;
 		this.effetPotionMin = effetPotionMin;
 		this.effetPotionMax = effetPotionMax;
-		this.effetPotionPreparee = effetPotionPreparee;
 		parler("Bonjour, je suis le druide " + nom + " et ma potion peut aller d'une force " + effetPotionMin + " à " + effetPotionMax + " .");
 	}
 	public String getNom() {
