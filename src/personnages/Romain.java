@@ -18,6 +18,7 @@ public class Romain{
 		return "Le romain " + nom + " : ";
 	}
 	public void recevoirCoup(int forceCoup){
+		assert force>0;
 		force -= forceCoup;
 		if (force>0) {
 			parler("Aie");
@@ -25,6 +26,7 @@ public class Romain{
 		else {
 			parler("J'abandonne...");
 		}
+		assert force<force+forceCoup;
 	}
 	public String toString() {
 		return "Romain [nom=" + nom + ", force=" + force + "]";
