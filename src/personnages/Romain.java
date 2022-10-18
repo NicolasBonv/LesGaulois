@@ -4,10 +4,11 @@ public class Romain{
 	private String nom;
 	private int force;
 	private int nbEquipement = 0;
-	private Equipement equipement[][];
+	private Equipement[][] equipement = new Equipement[1][1];
 	public Romain(String nom,int force) {
 		this.nom = nom;
 		this.force = force;
+		equipement = Equipement.values();
 		assert force>0;
 	}
 	public String getNom() {
@@ -36,12 +37,15 @@ public class Romain{
 	public void sEquiper(Equipement equipement) {
 		switch(nbEquipement) {
 		case 2 : System.out.println("Le soldat " + nom + " est deja bien protégé !");
+				break;
 		case 1 : if (equipement[0][0] == equipement) {
 			System.out.println("Le soldat " + nom + " possede déjà " + equipement.getNom() + " !");
 		}
+			break;
 		default : nbEquipement += 1;
-				equipement[Equipement.CASQUE] = equipement;
+				equipement[1][1] = equipement;
 				System.out.println("Le soldat "  + nom +" s'équipe avec un " + equipement.getNom());
+				break;
 		}
 	}
 	public static void main(String[] args) {
