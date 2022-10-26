@@ -9,17 +9,17 @@ public class Scenario {
 		Romain minus = new Romain("Minus",6);
 		Gaulois asterix = new Gaulois("Asterix",8);
 		Druide panoramix = new Druide("Panoramix",5,10);
-		Gaulois obelix = new Gaulois("Obélix",10);
+		Gaulois obelix = new Gaulois("Obï¿½lix",10);
 		
-		panoramix.parler("Je vais aller préparer une petite potion");
+		panoramix.parler("Je vais aller prï¿½parer une petite potion");
 		panoramix.preparerPotion();
 		panoramix.booster(obelix);
-		obelix.parler(" Par Bélénos, ce n'est pas juste !");
+		obelix.parler(" Par Bï¿½lï¿½nos, ce n'est pas juste !");
 		asterix.parler("Bonjour");
 		minus.parler("UN GAU... UN GAUGAU...");
-		asterix.frapper(minus);
-		asterix.frapper(minus);
-		asterix.frapper(minus);
+		while (minus.getForce() > 0) {
+			asterix.frapper(minus);
+		}
 	}
 
 }
