@@ -1,10 +1,10 @@
 package personnages;
-import personnages.Romain;
-import personnages.Druide;
 public class Gaulois{
 	 public String nom;
 	 public int force;
 	 private int effetPotion=1;
+	 private int nbTrophee;
+	 private Equipement[] trophee = new Equipement[100];
 	 public Gaulois(String nom, int force) {
 		 this.nom = nom;
 		 this.force = force;
@@ -19,9 +19,16 @@ public class Gaulois{
 	private String prendreParole() {
 		return "Le gaulois " + nom + " : ";
 	}
-	public void frapper(Romain romain) {
+	/*public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
 		romain.recevoirCoup((force / 3)*effetPotion);
+	}*/
+	public void frapper(Romain romain) {
+		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
+		trophee = romain.recevoirCoup((force/3) * effetPotion);
+		for (int i=0;trophee != null && i<trophee.length;i++,nbTrophee++) {
+			this.trophee[nbTrophee] = trophee[i];
+		}
 	}
 	@Override
 	public String toString() {
@@ -30,7 +37,7 @@ public class Gaulois{
 	}
 	public void boirePotion(int effetPotionPreparee) {
 		effetPotion = effetPotionPreparee;
-		parler("Merci Druide, je sens ma force est "+ effetPotion + " fois décuplée");
+		parler("Merci Druide, je sens ma force est "+ effetPotion + " fois dï¿½cuplï¿½e");
 	}
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Asterix",8);

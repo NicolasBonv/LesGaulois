@@ -1,15 +1,11 @@
 package personnages;
-import personnages.Romain;
-import personnages.Gaulois;
-import personnages.Druide;
-import personnages.Chef;
 
 public class Village {
 	private String nom;
 	private Chef chef;
 	private int nbVillageois = 0;
 	private int nbVillageoisMaximum=30;
-	private Gaulois villageois[];
+	private Gaulois[] villageois;
 	
 	public Village(String nom,int nbVillageoisMaximum) {
 		this.nom = nom;
@@ -29,14 +25,14 @@ public class Village {
 		return villageois[nbVillageois];
 	}
 	public void afficherVillageois() {
-		System.out.println("Dans " + getNom() + " du chef " + chef.getNom() + " vivent les légendaires gaulois : ");
+		System.out.println("Dans " + getNom() + " du chef " + chef.getNom() + " vivent les lï¿½gendaires gaulois : ");
 		for(int i = 0 ;i<nbVillageois;i++) {
 			Gaulois gaulois = trouverHabitant(i);
 			System.out.println(gaulois);
 		}
 	}
 	public static void main(String[] args) {
-		Village village = new Village("Village des Irréductibles",30);
+		Village village = new Village("Village des Irrï¿½ductibles",30);
 		Gaulois asterix = new Gaulois("Asterix",8);
 		Gaulois obelix = new Gaulois("Obelix",25);
 		Chef abraracourcix = new Chef("Abracourcix",6,0,village);

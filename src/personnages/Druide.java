@@ -1,11 +1,12 @@
 package personnages;
-import personnages.Gaulois;
 import java.util.Random;
+
 public class Druide {
 	private  String nom;
 	private int effetPotionMin;
 	private int effetPotionMax;
-	public int effetPotionPreparee;
+	public int effetPotionPreparee = 1;
+	
 	public Druide(String nom,int effetPotionMin,int effetPotionMax) {
 		this.nom = nom;
 		this.effetPotionMin = effetPotionMin;
@@ -15,28 +16,31 @@ public class Druide {
 	public String getNom() {
 		return nom;
 	}
-	public void preparerPotion() {
-		Random rand = new Random();
-		effetPotionPreparee = rand.nextInt(effetPotionMax);
-		if (effetPotionPreparee < effetPotionMin) {
-			effetPotionPreparee = rand.nextInt(effetPotionMax);
-			preparerPotion();
-		}
-		else if (effetPotionPreparee > 7 ) {
-			parler("J'ai preparée une super potion de force");
-		}
-		else {
-			parler("Je n'ai pas trouvée tous les ingrédients, ma potion est seulement de force " + effetPotionPreparee);
-		}
-	}
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "<" + texte + ">");
 	}
 	private String prendreParole() {
 		return "Le druide " + nom + " : ";
 	}
-	public void booster(Gaulois nom) {
-		parler("Non, " + nom.getNom() + "!... Tu n'auras pas de potion magique");
+	public void preparerPotion() {
+		Random rand = new Random();
+		effetPotionPreparee = rand.nextInt(effetPotionMax - effetPotionMin+1);
+		effetPotionPreparee += effetPotionMin;
+		if (effetPotionPreparee > 7 ) {
+			parler("J'ai preparï¿½e une super potion de force : " + effetPotionPreparee);
+		}
+		else {
+			parler("Je n'ai pas trouvï¿½e tous les ingrï¿½dients, ma potion est seulement de force " + effetPotionPreparee);
+		}
+	}
+	public void booster(Gaulois gaulois) {
+		String nomGaulois = gaulois.getNom();
+		if ("Obelix".equals(nomGaulois)) {
+			parler("Non, " + nomGaulois + "!... Tu n'auras pas de potion magique");	
+		}
+		else {
+			gaulois.boirePotion(effetPotionPreparee);
+		}
 	}
 	public static void main(String[] args) {
 		Druide panoramix = new Druide("Panoramix",5,10);
